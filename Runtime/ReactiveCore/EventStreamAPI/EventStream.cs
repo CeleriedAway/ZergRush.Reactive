@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using JetBrains.Annotations;
 
 namespace ZergRush.ReactiveCore
 {
@@ -45,7 +44,6 @@ namespace ZergRush.ReactiveCore
             callbacks.Remove(action);
         }
 
-        [MustUseReturnValue("In most cases you should use returned value to disconnect from event later")]
         public IDisposable Subscribe(Action<T> action)
         {
             if (callbacks == null) callbacks = new List<Action<T>>();
@@ -189,7 +187,6 @@ namespace ZergRush.ReactiveCore
             callbacks.Clear();
         }
 
-        [MustUseReturnValue("In most cases you should use returned value to disconnect from cell later")]
         public IDisposable Subscribe(Action action)
         {
             if (callbacks == null) callbacks = new List<Action>();

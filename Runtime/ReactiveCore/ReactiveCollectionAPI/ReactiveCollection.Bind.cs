@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 
 namespace ZergRush.ReactiveCore
 {
@@ -33,7 +32,6 @@ namespace ZergRush.ReactiveCore
         }
 
         /// Wont work well if collection has same elements multiple times
-        [MustUseReturnValue]
         public static IDisposable AffectEach<T>(this IReactiveCollection<T> collection,
             Action<Connections, T> affect)
         {

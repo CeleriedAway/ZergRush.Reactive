@@ -1,5 +1,4 @@
 using System;
-using JetBrains.Annotations;
 
 namespace ZergRush.ReactiveCore
 {
@@ -8,7 +7,6 @@ namespace ZergRush.ReactiveCore
         /// Calls action with current value of a cell and subscribes to its updates with that actionConfig.
         /// Declares a strong projection between data and its effect
         /// The most commongly used function in cell API
-        [MustUseReturnValue("In most cases you should use returned value to disconnect from cell later")]
         public static IDisposable Bind<T>(this ICell<T> cell, Action<T> action)
         {
             var disp = cell.ListenUpdates(action);
