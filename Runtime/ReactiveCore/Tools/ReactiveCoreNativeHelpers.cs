@@ -6,7 +6,7 @@ using ZergRush;
 
 namespace ZergRush.ReactiveCore
 {
-    public static class ReactiveCoreNativeHelpers
+    internal static class ReactiveCoreNativeHelpers
     {
         public static string PrintCollection<T>(this IEnumerable<T> collection, string delimiter = ", ")
         {
