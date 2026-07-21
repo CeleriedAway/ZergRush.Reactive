@@ -4,10 +4,16 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <Authors>Alexandr Pyatkov</Authors>
+    <Version>0.1.0-preview.1</Version>
     <RepositoryUrl>https://github.com/CeleriedAway/ZergRush</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ZergRushUnityBuildRoot)' != ''">
+    <!-- A redirected obj folder no longer supplies the SDK exclusion for the
+         project's local bin/obj trees. Keep them out of Compile items so a
+         normal dotnet build followed by Unity's redirected CLI build does not
+         compile duplicate generated assembly attributes. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(MSBuildProjectDirectory)\bin\**\*;$(MSBuildProjectDirectory)\obj\**\*</DefaultItemExcludes>
     <BaseOutputPath>$(ZergRushUnityBuildRoot)\bin\$(MSBuildProjectName)\</BaseOutputPath>
     <BaseIntermediateOutputPath>$(ZergRushUnityBuildRoot)\obj\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
     <MSBuildProjectExtensionsPath>$(ZergRushUnityBuildRoot)\obj\$(MSBuildProjectName)\</MSBuildProjectExtensionsPath>

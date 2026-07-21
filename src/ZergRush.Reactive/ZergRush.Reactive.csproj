@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Description>Clean C# reactive primitives and utilities for ZergRush.</Description>
+    <Description>Lightweight reactive cells, collections, event streams, and disposable utilities for C# applications.</Description>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\..\Runtime\**\*.cs" />
