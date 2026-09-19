@@ -6,6 +6,12 @@
     <Authors>Alexandr Pyatkov</Authors>
     <RepositoryUrl>https://github.com/CeleriedAway/ZergRush</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(MSBuildProjectDirectory)\bin\**\*;$(MSBuildProjectDirectory)\obj\**\*;$(MSBuildProjectDirectory)\bin~\**\*;$(MSBuildProjectDirectory)\obj~\**\*</DefaultItemExcludes>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(ZergRushUnityBuildRoot)' == ''">
+    <BaseOutputPath>$(MSBuildProjectDirectory)\bin~\</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)\obj~\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>$(MSBuildProjectDirectory)\obj~\</MSBuildProjectExtensionsPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(ZergRushUnityBuildRoot)' != ''">
     <BaseOutputPath>$(ZergRushUnityBuildRoot)\bin\$(MSBuildProjectName)\</BaseOutputPath>

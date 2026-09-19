@@ -5,3 +5,5 @@ obj/
 *.user
 *.DotSettings.user
 *.meta
+[Bb]in~/
+[Oo]bj~/
